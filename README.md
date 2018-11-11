@@ -1,3 +1,3 @@
 # Data-Structure-Project
-Our project is to search \n
+Our Data Structure project is to build a search engine for
 Cracked PC Game Free Download

@@ -8,6 +8,7 @@ import java.net.URLConnection;
 public class WordCounter {
 	private String urlStr;
 	private String content;
+
 	public WordCounter(String urlStr) {
 		this.urlStr = urlStr;
 	}
@@ -29,17 +30,19 @@ public class WordCounter {
 	}
 
 	public int countKeyword(String keyword) throws IOException {
+		int count = 0;
 		if (content == null) {
 			content = fetchContent();
 		}
-
 		content = content.toUpperCase();
 		keyword = keyword.toUpperCase();
-		int count = 0;
-		int index = 0;
-		while (index != -1) {
+
+
+		int T = 0;
+		int index;
+		while ((index = content.indexOf(keyword, T)) >= 0) {
 			count++;
-			content = content.substring(index + keyword.length());
+			T = index + keyword.length();
 		}
 		return count;
 	}
